@@ -5,20 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Empatia e Cooperação nos E-sports</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilização básica para os botões de like */
+        .like-container {
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .like-btn {
+            background-color: #ff4757;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .like-btn:hover {
+            background-color: #ff6b81;
+        }
+        .like-count {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-
     <div class="header">
         <h1>Empatia & Cooperação nos E-sports</h1>
         <p>Construindo pontes e vencendo desafios através do trabalho em equipe no mundo gamer.</p>
     </div>
 
     <div class="main-container">
-
         <div class="card">
             <h1>A Sinergia do Time</h1>
             <p>Seja no League of Legends, Valorant ou Counter-Strike, a habilidade individual não garante a vitória. A verdadeira força de uma equipe está na capacidade de ouvir, apoiar e confiar no seu parceiro de time durante os momentos mais difíceis da partida.</p>
-            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80" alt="Pessoas jogando videogame juntas em equipe">
+            <img src="image_hEm2cx.png" alt="Jogador de e-sports focado na partida usando headset profissional">
+            
+            <!-- Botão de Like do Card 1 -->
+            <div class="like-container">
+                <button class="like-btn" onclick="darLike(this)">❤️ Curtir</button>
+                <span class="like-count">0 curtidas</span>
+            </div>
         </div>
 
         <div class="card">
@@ -31,16 +62,47 @@
                 <li><strong>Respeito ao Adversário:</strong> Praticar o Fair Play e enviar o tradicional "GG" (Good Game) no final.</li>
                 <li><strong>Inclusão e Acessibilidade:</strong> Criar um ambiente seguro para pessoas de todas as idades e gêneros.</li>
             </ul>
-            <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=800&q=80" alt="Controle de videogame iluminado com luzes neon">
+            <img src="image_xBi-DZ.png" alt="Teclado mecânico gamer com iluminação RGB colorida em destaque">
+            
+            <!-- Botão de Like do Card 2 -->
+            <div class="like-container">
+                <button class="like-btn" onclick="darLike(this)">❤️ Curtir</button>
+                <span class="like-count">0 curtidas</span>
+            </div>
         </div>
 
         <div class="card">
             <h1>Comunidade e Futuro</h1>
             <p>Promover a empatia dentro dos jogos constrói amizades duradouras e torna os e-sports um espaço saudável para as próximas gerações de jogadores.</p>
-            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80" alt="Setup de jogos iluminado com periféricos e tela">
+            <img src="image_BeLYMs.png" alt="Sala de jogos moderna com múltiplas telas e iluminação neon azul e rosa">
+            
+            <!-- Botão de Like do Card 3 -->
+            <div class="like-container">
+                <button class="like-btn" onclick="darLike(this)">❤️ Curtir</button>
+                <span class="like-count">0 curtidas</span>
+            </div>
         </div>
-
     </div>
 
+    <!-- Script JavaScript para fazer o contador funcionar individualmente -->
+    <script>
+        function darLike(botao) {
+            // Encontra o elemento de texto que está logo ao lado do botão clicado
+            const contadorTexto = botao.nextElementSibling;
+            
+            // Pega o número atual de curtidas do texto
+            let curtidasAtuais = parseInt(contadorTexto.innerText);
+            
+            // Soma mais 1
+            curtidasAtuais++;
+            
+            // Atualiza o texto na tela de forma correta (singular/plural)
+            if (curtidasAtuais === 1) {
+                contadorTexto.innerText = curtidasAtuais + " curtida";
+            } else {
+                contadorTexto.innerText = curtidasAtuais + " curtidas";
+            }
+        }
+    </script>
 </body>
 </html>
